@@ -144,13 +144,7 @@ GET /api/bridge          - Bridge state verification
 3. Write tests for new functionality
 4. Ensure all tests pass
 5. Submit a pull request
-
-## Security
-
-This project is a security tool itself. If you find vulnerabilities:
-- DO NOT open a public issue
-- Email: security@example.com
-- We will respond within 24 hours
+s
 
 ## License
 
