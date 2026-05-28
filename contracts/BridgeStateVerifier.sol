@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
@@ -9,7 +10,7 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
  * @notice Cross-chain state proof verification for Base L2 ↔ L1 message passing
  * @dev Validates Merkle proofs for L2 withdrawal messages and state roots
  */
-contract BridgeStateVerifier is AccessControl {
+contract BridgeStateVerifier is AccessControl , ReentrancyGuard {
     bytes32 public constant VERIFIER_ROLE = keccak256("VERIFIER_ROLE");
     bytes32 public constant SUBMITTER_ROLE = keccak256("SUBMITTER_ROLE");
 
