@@ -1,0 +1,43 @@
+{
+  "name": "base-guardian",
+  "version": "1.0.0",
+  "description": "Production-grade L2 security monitoring, threat detection, and automated response framework for Base",
+  "main": "",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "deploy:goerli": "hardhat run scripts/deploy.js --network base_goerli",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network base_mainnet",
+    "verify:goerli": "hardhat run scripts/verify.js --network base_goerli",
+    "lint:sol": "solhint 'contracts/**/*.sol'",
+    "clean": "hardhat clean",
+    "size": "hardhat size-contracts"
+  },
+  "keywords": [
+    "base",
+    "l2",
+    "security",
+    "monitoring",
+    "circuit-breaker",
+    "threat-detection",
+    "bridge-verifier",
+    "sequencer-health",
+    "ethereum",
+    "hardhat",
+    "solidity"
+  ],
+  "author": "Sourav Joy",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "hardhat": "^2.14.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solhint": "^3.4.1",
+    "solidity-coverage": "^0.8.2"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "dotenv": "^16.0.3"
+  }
+}
