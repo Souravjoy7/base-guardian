@@ -45,12 +45,16 @@ describe("CircuitBreaker", function () {
 
   describe("Threat Confirmation", function () {
     it("should allow multiple guardians to confirm", async function () {
+      // Report threat first so eventId 1 exists
+      await circuitBreaker.connect(guardian1).reportThreat(3, "High severity threat");
       await circuitBreaker.connect(guardian1).confirmThreat(1);
       await circuitBreaker.connect(guardian2).confirmThreat(1);
       // Should not revert
     });
 
     it("should reject duplicate confirmation", async function () {
+      // Report threat first so eventId 1 exists
+      await circuitBreaker.connect(guardian1).reportThreat(3, "High severity threat");
       await circuitBreaker.connect(guardian1).confirmThreat(1);
       await expect(
         circuitBreaker.connect(guardian1).confirmThreat(1)
